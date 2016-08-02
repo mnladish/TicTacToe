@@ -2,8 +2,9 @@
 #include <iostream>
 
 Board::Board()
-{
-  for (int i=0; i < ROWS; i++)//initializes array to be empty
+{ 
+  //initializes game board to be empty
+  for (int i=0; i < ROWS; i++)
   {  
     for (int j=0; j < COLS; j++)
     {
@@ -13,7 +14,8 @@ Board::Board()
 }
 
 bool Board::makeMove(int xVal, int yVal, char playerID)
-{
+{ 
+  //record move only if space is empty
   if (gameBoard[xVal][yVal] == '.')
   {
     gameBoard[xVal][yVal] = playerID;
@@ -27,6 +29,7 @@ bool Board::makeMove(int xVal, int yVal, char playerID)
 
 PossibleOutcomes Board::gameState()
 {
+  //test for winning combinations
   char winner = '.';
   //first row
   if (gameBoard[0][0] != '.' 
@@ -85,10 +88,10 @@ PossibleOutcomes Board::gameState()
     winner = gameBoard[2][0];
   }
   
-  if (winner == 'x')
+  if (winner == 'X')
     return X_WON;
 
-  if (winner == 'y')
+  if (winner == 'O')
     return O_WON;
 
   //check for draw
@@ -107,6 +110,7 @@ PossibleOutcomes Board::gameState()
 
 void Board::print()
 {
+  //prints current game board
   std::cout << "  0 1 2" << std::endl;
   std::cout << "0 " << gameBoard[0][0] << " " << gameBoard[0][1] << " " << gameBoard[0][2] << std::endl;
   std::cout << "1 " << gameBoard[1][0] << " " << gameBoard[1][1] << " " << gameBoard[1][2] << std::endl;

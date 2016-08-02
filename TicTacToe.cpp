@@ -28,13 +28,13 @@ void TicTacToe::play()
       gameStatus = newGame.gameState();
 
       //Switch players
-      if(playerTurn == 'x')
+      if(playerTurn == 'X')
       {
-        playerTurn = 'o';
+        playerTurn = 'O';
       }
       else
       {
-        playerTurn = 'x';
+        playerTurn = 'X';
       }
     }
     else
@@ -63,9 +63,11 @@ int main()
 {
   char firstMove;
   
-  std::cout << "Please enter which player (x or o) will go first." << std::endl;
+  std::cout << "Please enter which player (X or O) will go first." << std::endl;
 
   std::cin >> firstMove;
+
+  firstMove = toupper(firstMove);
   
   TicTacToe game1(firstMove);
 
