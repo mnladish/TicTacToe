@@ -1,3 +1,9 @@
+/**********************************************************************
+** Author: Megan Ladish
+** Date: 8-2-16
+** Description: This is the class declaration (interface) for the class
+** Board. It defines the member variables and functions.
+**********************************************************************/
 #ifndef BOARD_HPP
 #define BOARD_HPP
 
@@ -13,8 +19,8 @@ class Board
   public:
     Board();
     bool makeMove(int, int, char);  //assigns user's move to gameboard
-    PossibleOutcomes gameState(); //returns outcome of game after move
-    void print(); //prints current board to screen
+    PossibleOutcomes gameState();   //returns outcome of game after move
+    void print();                   //prints current board to screen
 
 };
 #endif

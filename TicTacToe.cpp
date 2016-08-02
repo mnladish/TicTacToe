@@ -1,3 +1,11 @@
+/******************************************************************************
+** Author: Megan Ladish
+** Date: 8-2-16
+** Description: This program allows users to play TicTacToe. It includes the
+** function definition for the class TicTacToe and the main method. It plays
+** through a game of TicTacToe and determines a winner or draw.
+******************************************************************************/
+
 #include <iostream>
 #include "TicTacToe.hpp"
 
@@ -7,7 +15,7 @@ TicTacToe::TicTacToe(char player)
 }
 
 PossibleOutcomes gameStatus; //Hold status of game, win/draw/unfinished
-int xCoord, yCoord;
+int xCoord, yCoord;          //Holds x and y position on game board
 
 void TicTacToe::play()
 {
@@ -43,6 +51,7 @@ void TicTacToe::play()
     }
   }while(gameStatus == UNFINISHED);
 
+  //At this point, there should be a winner or a draw
   if(gameStatus == X_WON)
   {
     std::cout << "Congratulations Player X! You win!" << std::endl;

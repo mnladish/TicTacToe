@@ -1,3 +1,11 @@
+/******************************************************************
+** Author: Megan Ladish
+** Date: 8-2-16
+** Description: The is the function definition (implementation)
+** for the class Board. It starts with a cleared game board, tests
+** for all winning combos, draw, and unfinished games, and it 
+** prints the game board to the screen.
+******************************************************************/
 #include "Board.hpp"
 #include <iostream>
 
