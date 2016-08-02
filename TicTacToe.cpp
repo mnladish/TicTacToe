@@ -61,11 +61,15 @@ void TicTacToe::play()
 
 int main()
 {
-  TicTacToe game1;
-
+  char firstMove;
+  
+  TicTacToe game1(firstMove);
+  
   std::cout << "Please enter which player (x or o) will go first." << std::endl;
 
-  std::cin >> game1.TicTacToe();
+  std::cin >> firstMove;
+
+  game1.play();
 
   return 0;
 }
