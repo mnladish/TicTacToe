@@ -16,7 +16,7 @@ void TicTacToe::play()
     std::cout << "Player " << playerTurn << ": please enter your move." << std::endl;
     std::cin >> xCoord >> yCoord;
 
-    if(newGame.makeMove(xCoord, yCoord, playerTurn) == true)
+    if(newGame.makeMove(xCoord, yCoord, playerTurn))
     {
       //Send move to board
       newGame.makeMove(xCoord, yCoord, playerTurn);
@@ -30,11 +30,11 @@ void TicTacToe::play()
       //Switch players
       if(playerTurn == 'x')
       {
-        playerTurn == 'o';
+        playerTurn = 'o';
       }
       else
       {
-        playerTurn == 'x';
+        playerTurn = 'x';
       }
     }
     else
@@ -55,7 +55,7 @@ void TicTacToe::play()
 
   if(gameStatus == DRAW)
   {
-    std::cout << "Tood bad! It's a draw! Please play again to determine a winner." << std::endl;
+    std::cout << "It's a draw! Please play again to determine a winner." << std::endl;
   }
 }
 
@@ -63,11 +63,11 @@ int main()
 {
   char firstMove;
   
-  TicTacToe game1(firstMove);
-  
   std::cout << "Please enter which player (x or o) will go first." << std::endl;
 
   std::cin >> firstMove;
+  
+  TicTacToe game1(firstMove);
 
   game1.play();
 
